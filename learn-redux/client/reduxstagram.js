@@ -24,11 +24,7 @@ Raven.config(sentry_url, {
     }
 }).install();
 
-logException(new Error('download failed!'), {
-    email: 'wesbos@gmail.com'
-});
-
-console.log(store.doesNot.nope());
+Raven.captureMessage('Something bad happened!');
 
 const router = (
     <Provider store={store}>

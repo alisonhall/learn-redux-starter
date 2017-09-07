@@ -15,7 +15,7 @@ import { Provider } from 'react-redux';
 import store, { history } from './store';
 
 import Raven from 'raven-js';
-import { sentry_url } from './data/config';
+import { sentry_url, logException } from './data/config';
 
 Raven.config(sentry_url, {
     tags: {
@@ -24,7 +24,11 @@ Raven.config(sentry_url, {
     }
 }).install();
 
-console.log(window.user.doesNotExist);
+logException(new Error('download failed!'), {
+    email: 'wesbos@gmail.com'
+});
+
+console.log(store.doesNot.nope());
 
 const router = (
     <Provider store={store}>

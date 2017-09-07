@@ -17,9 +17,14 @@ import store, { history } from './store';
 import Raven from 'raven-js';
 import { sentry_url } from './data/config';
 
-Raven.config(sentry_url).install();
+Raven.config(sentry_url, {
+    tags: {
+        git_commit: 'asdfas9d08f',
+        userLevel: 'editor'
+    }
+}).install();
 
-console.log(window.doesNotExist.nope);
+console.log(window.user.doesNotExist);
 
 const router = (
     <Provider store={store}>

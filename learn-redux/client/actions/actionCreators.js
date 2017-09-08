@@ -1,3 +1,10 @@
+// This all happens synchronously. If you need to use async, (ex. calling an api), then checkout the following:
+    // Redux-saga: https://github.com/redux-saga/redux-saga
+    // Redux-thunk: https://github.com/gaearon/redux-thunk
+// If getting a large, complex JSON returned, consider using:
+    // Normalizr: https://github.com/paularmstrong/normalizr
+
+
 // increment
 export function increment(index) {
     return {

@@ -7,6 +7,7 @@
 
 // increment
 export function increment(index) {
+    debugger;
     return {
         type: 'INCREMENT_LIKES',
         index
